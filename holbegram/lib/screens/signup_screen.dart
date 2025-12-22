@@ -1,7 +1,10 @@
 // task 4
+// el q funciona
 import 'package:flutter/material.dart';
 import '../widgets/text_field.dart';
 import 'login_screen.dart';
+import 'upload_image_screen.dart';
+
 
 class SignUpScreen extends StatefulWidget {
   final TextEditingController emailController;
@@ -149,7 +152,43 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           const Color.fromARGB(218, 226, 37, 24),
                         ),
                       ),
-                      onPressed: () {},
+                      // tasks 8: upload image
+                      onPressed: () {
+                        final email = widget.emailController.text.trim();
+                        final username = widget.usernameController.text.trim();
+                        final password = widget.passwordController.text.trim();
+                        final confirmPassword =
+                            widget.passwordConfirmController.text.trim();
+
+                        if (email.isEmpty ||
+                            username.isEmpty ||
+                            password.isEmpty ||
+                            confirmPassword.isEmpty) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Please fill all the fields')),
+                          );
+                          return;
+                        }
+
+                        if (password != confirmPassword) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Passwords do not match')),
+                          );
+                          return;
+                        }
+
+                        // si la info es bien, navega
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => AddPicture(
+                              email: email,
+                              username: username,
+                              password: password,
+                            ),
+                          ),
+                        );
+                      },
                       child: const Text(
                         'Sign Up',
                         style: TextStyle(color: Colors.white),

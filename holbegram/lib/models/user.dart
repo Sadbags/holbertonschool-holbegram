@@ -31,7 +31,7 @@ class Users {
 
     // crea users desde un snapshot de Firestore
     static Users fromSnap(DocumentSnapshot snap) {
-        var snapshot = snap.data() as Map<string>, dynamic>;
+        var snapshot = snap.data() as Map<String, dynamic>;
 
         return Users(
             uid: snapshot['uid'],
@@ -48,7 +48,7 @@ class Users {
     }
 
     // convierte Users a map
-    Map<string, dynamic> toJson() {
+    Map<String, dynamic> toJson() {
         return {
             'uid': uid,
             'email': email,
