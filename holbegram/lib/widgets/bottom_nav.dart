@@ -107,7 +107,7 @@ class _BottomNavState extends State<BottomNav> {
           BottomNavyBarItem(
             icon: const Icon(Icons.favorite_border),
             title: const Text(
-              'Favorite',
+              'Favorites',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 25,

@@ -1,7 +1,5 @@
 // task 10 add_image.dart
 
-// lib/screens/pages/add_image.dart
-
 import 'dart:typed_data';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -136,10 +134,9 @@ class _AddImageState extends State<AddImage> {
         _captionController.clear();
       });
 
-      // 🔹 Redirigir a la pantalla Home / Feed
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const Feed()),
-      );
+      // task 12
+      // Redirigir a la pantalla Home despues de hacer el post de la foto.
+      Navigator.of(context).pushReplacementNamed('/home');
 
     } catch (e) {
       if (!mounted) return;

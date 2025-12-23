@@ -448,7 +448,7 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
-  // ✅ Función para login
+  // Función para login
   Future<void> _login() async {
     final email = widget.emailController.text.trim();
     final password = widget.passwordController.text;
