@@ -67,7 +67,7 @@ class AuthMethode {
       // Get user
       User user = userCredential.user!;
 
-      // Create Users model
+      // Crea Users model
       Users users = Users(
         uid: user.uid,
         email: email,

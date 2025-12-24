@@ -1,3 +1,5 @@
+// tasks 11: post_storage.dart
+
 import 'dart:typed_data';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -38,7 +40,7 @@ class PostStorage {
 		"datePublished": FieldValue.serverTimestamp(),
         "postUrl": postUrl,
         "profImage": profImage,
-        "publicId": publicId, // ✅ nécessaire pour deletePost
+        "publicId": publicId,
       });
 
       return "Ok";

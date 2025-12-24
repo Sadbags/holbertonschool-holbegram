@@ -11,7 +11,7 @@ class StorageMethods {
     required Uint8List file,
     required String uid,
     required String folder,
-    String? fileName, // ex: postId
+    String? fileName,
   }) async {
     try {
       final String id = fileName ?? _uuid.v4();
